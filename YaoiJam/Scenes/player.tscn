@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bovo8djixbiwk"]
 
 [ext_resource type="Texture2D" uid="uid://crusdu4frmto6" path="res://Assets/char_placeholder.png" id="1_e41u7"]
-[ext_resource type="Script" path="res://player.gd" id="1_sjye0"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_sjye0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4pj11"]
 atlas = ExtResource("1_e41u7")
@@ -99,6 +99,7 @@ animations = [{
 radius = 6.0
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 4
 collision_layer = 2
 script = ExtResource("1_sjye0")
 
@@ -110,3 +111,6 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_s7imx")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-12, 0)

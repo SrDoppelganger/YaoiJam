@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://brrsbe3uug7or"]
+
+[ext_resource type="Texture2D" uid="uid://dxblsr2e50ar5" path="res://Assets/tilsets/placeholder.png" id="1_lpi6a"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5akcs"]
+texture = ExtResource("1_lpi6a")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -3.9375, 4, -3.9375, 4, 4, -4.125, 3.875)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_qtwj3"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 3
+sources/0 = SubResource("TileSetAtlasSource_5akcs")
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_qtwj3")
+format = 2

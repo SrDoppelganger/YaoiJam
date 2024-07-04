@@ -8,6 +8,9 @@ var direction = Vector2(0,0);
 
 @onready var animated_sprite = $AnimatedSprite2D
 
+@onready var ray_cast= $RayCast2D
+var interagir = false
+
 func _physics_process(delta):
 	
 	direction = Vector2(0,0)
@@ -28,6 +31,16 @@ func _physics_process(delta):
 	velocity = direction.normalized() * SPEED
 	
 	move_and_slide()
+	
+	#raycast para interagir com itens/mundo (talvez seja modificado)
+	ray_cast.look_at(direction)
+	
+	if ray_cast.is_colliding() and Input.is_action_just_pressed("interagir"):
+		interagir = true
+	else:
+		interagir = false
+	
+
 
 #toca as animações de acordo com a direção do personagem
 #talvez precise de umas modificações no futuro
@@ -46,6 +59,5 @@ func animation(direction):
 			animated_sprite.play("up_walk")
 		_:
 			animated_sprite.play("idle")
-
 
 
