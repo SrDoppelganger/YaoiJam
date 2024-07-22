@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 @onready var tilemap = $"../TileMap"
+@onready var grid_player = $"."
+
+var isMoving = false
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("cima"):
@@ -33,4 +36,6 @@ func move(direction:Vector2):
 		return
 		
 	#move o jogador
+	isMoving = true 
 	global_position = tilemap.map_to_local(targetTile)
+	
